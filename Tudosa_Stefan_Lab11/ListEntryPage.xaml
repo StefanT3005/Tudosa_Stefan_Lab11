@@ -5,18 +5,18 @@
     x:Class="Tudosa_Stefan_Lab11.ListEntryPage"
     Title="Shopping Lists">
 
-    <StackLayout>
-        <ListView x:Name="listView"
-                  ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Description}"
-                              Detail="{Binding Date}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Button Text="Add"
-                Clicked="OnAddButtonClicked" />
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Shopping List"
+ Clicked="OnShopListAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView"
+ Margin="20"
+ ItemSelected="OnListViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Description}"
+ Detail="{Binding Date}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
